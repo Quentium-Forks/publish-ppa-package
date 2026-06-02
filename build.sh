@@ -53,6 +53,8 @@ if [[ -z "$NEW_VERSION_TEMPLATE" ]]; then
     NEW_VERSION_TEMPLATE="{VERSION}-ppa{REVISION}~ubuntu{SERIES_VERSION}"
 fi
 
+include_orig_source=1
+
 rm -rf /tmp/workspace && mkdir -p /tmp/workspace/source
 
 cp $TARBALL /tmp/workspace/source
@@ -119,7 +121,14 @@ for s in $SERIES; do
 
     echo "Building package..."
 
-    debuild -S -sd \
+    if [[ $include_orig_source -eq 1 ]]; then
+        source_option="-sa"
+        include_orig_source=0
+    else
+        source_option="-sd"
+    fi
+
+    debuild -S "$source_option" \
         -k"$GPG_KEY_ID" \
         -p"gpg --batch --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback"
 

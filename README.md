@@ -41,6 +41,8 @@ Default to the series that are supported at the moment, i.e., the output of `dis
 
 Note that series will be sorted by their version, e.g., `noble` will be published before `resolute`, even if `noble` is after `resolute` in the input.
 
+When publishing multiple series in one run, the action uploads the full source package for the first series and reuses the same upstream source for the remaining series uploads.
+
 ### `extra_series`
 **Optional** The extra series to which the package will be published, separated by space. e.g., `"noble resolute"`.
 
