@@ -53,7 +53,7 @@ Available variables:
 - `{VERSION}`: The version of the package. e.g., `1.0.0`
 - `{REVISION}`: The revision of the package. e.g., `1`
 - `{SERIES}`: The series of the package. e.g., `resolute`
-- `{SERIES_VERSION}`: The version of the series. e.g., `20.04`
+- `{SERIES_VERSION}`: The version of the series. e.g., `26.04`
 
 ### `extra_ppa`
 **Optional** The extra PPA this package depends on, separated by space. e.g., `"liushuyu-011/rust-bpo-1.75"`.
