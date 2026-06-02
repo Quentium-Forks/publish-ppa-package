@@ -39,6 +39,8 @@ If set to any non-empty value, the changelog file should be provided in the `deb
 
 Default to the series that are supported at the moment, i.e., the output of `distro-info --supported`.
 
+When publishing multiple series in one run, the action uploads the full source package for the first series and reuses the same upstream source for the remaining series uploads.
+
 ### `extra_series`
 **Optional** The extra series to which the package will be published, separated by space. e.g., `"bionic focal"`.
 
