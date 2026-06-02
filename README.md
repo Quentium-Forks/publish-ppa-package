@@ -39,6 +39,8 @@ If set to any non-empty value, the changelog file should be provided in the `deb
 
 Default to the series that are supported at the moment, i.e., the output of `distro-info --supported`.
 
+Note that series will be sorted by their version, e.g., `noble` will be published before `resolute`, even if `noble` is after `resolute` in the input.
+
 ### `extra_series`
 **Optional** The extra series to which the package will be published, separated by space. e.g., `"noble resolute"`.
 
