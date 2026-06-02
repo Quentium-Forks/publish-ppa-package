@@ -24,17 +24,17 @@ inputs:
     required: false
     default: ''
   series:
-    description: 'The series to which the package will be published, separated by space. e.g., "bionic focal"'
+    description: 'The series to which the package will be published, separated by space. e.g., "noble resolute"'
     required: false
   extra_series:
-    description: 'The extra series to which the package will be published, separated by space. e.g., "bionic focal"'
+    description: 'The extra series to which the package will be published, separated by space. e.g., "noble resolute"'
     required: false
   revision:
     description: 'The revision of the package'
     required: false
     default: '1'
   new_version_template:
-    description: 'The template of the version of the package. e.g., "{VERSION}-{SERIES}{REVISION}" will be replaced with "1.0.0-focal1"'
+    description: 'The template of the version of the package. e.g., "{VERSION}-{SERIES}{REVISION}" will be replaced with "1.0.0-resolute1"'
     required: false
     default: '{VERSION}-ppa{REVISION}~ubuntu{SERIES_VERSION}'
   deb_email:

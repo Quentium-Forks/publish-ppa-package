@@ -35,14 +35,12 @@ gpg --output private.pgp --armor --export-secret-key <KEY_ID or EMAIL>
 If set to any non-empty value, the changelog file should be provided in the `debian_dir` directory. The action will update the changelog file with the package name, revision and distribution.
 
 ### `series`
-**Optional** The series to which the package will be published, separated by space. e.g., `"bionic focal"`.
+**Optional** The series to which the package will be published, separated by space. e.g., `"noble resolute"`.
 
 Default to the series that are supported at the moment, i.e., the output of `distro-info --supported`.
 
-When publishing multiple series in one run, the action uploads the full source package for the first series and reuses the same upstream source for the remaining series uploads.
-
 ### `extra_series`
-**Optional** The extra series to which the package will be published, separated by space. e.g., `"bionic focal"`.
+**Optional** The extra series to which the package will be published, separated by space. e.g., `"noble resolute"`.
 
 ### `revision`
 **Optional** The revision of the package, default to `1`.
@@ -54,7 +52,7 @@ Available variables:
 
 - `{VERSION}`: The version of the package. e.g., `1.0.0`
 - `{REVISION}`: The revision of the package. e.g., `1`
-- `{SERIES}`: The series of the package. e.g., `focal`
+- `{SERIES}`: The series of the package. e.g., `resolute`
 - `{SERIES_VERSION}`: The version of the series. e.g., `20.04`
 
 ### `extra_ppa`
