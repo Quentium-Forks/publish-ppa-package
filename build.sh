@@ -134,7 +134,7 @@ for s in $SERIES; do
 
     cat /etc/dput.cf
 
-    dput ssh-ppa:$REPOSITORY ../*.changes
+    dput ppa:$REPOSITORY ../*.changes
 
     echo "Uploaded $package to $REPOSITORY"
 
