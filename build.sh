@@ -132,7 +132,9 @@ for s in $SERIES; do
         -k"$GPG_KEY_ID" \
         -p"gpg --batch --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback"
 
-    dput ppa:$REPOSITORY ../*.changes
+    cat /etc/dput.cf
+
+    dput ssh-ppa:$REPOSITORY ../*.changes
 
     echo "Uploaded $package to $REPOSITORY"
 
