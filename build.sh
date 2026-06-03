@@ -134,9 +134,13 @@ for s in $SERIES; do
 
     cat /etc/dput.cf
 
-    dput ppa:$REPOSITORY ../*.changes
+    while true; do
+        if dput ppa:$REPOSITORY ../*.changes; then
+            echo "Uploaded $package to $REPOSITORY"
 
-    echo "Uploaded $package to $REPOSITORY"
+            echo "::endgroup::"
 
-    echo "::endgroup::"
+            exit 0
+        fi
+    done
 done
