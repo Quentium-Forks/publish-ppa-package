@@ -42,7 +42,7 @@ if [[ -n "$EXTRA_SERIES" ]]; then
     SERIES="$EXTRA_SERIES $SERIES"
 fi
 
-# Reorder series to build the oldest one first using distro-info --all
+# Reorder series to build the oldest one first & filter out unsupported series
 SERIES=$(distro-info --all | grep -E "($(echo $SERIES | tr ' ' '|'))" | awk '{print $1}')
 
 if [[ -z "$REVISION" ]]; then
