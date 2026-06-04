@@ -132,8 +132,6 @@ for s in $SERIES; do
         -k"$GPG_KEY_ID" \
         -p"gpg --batch --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback"
 
-    cat /etc/dput.cf
-
     while true; do
         if dput ppa:$REPOSITORY ../*.changes; then
             echo "Uploaded $package to $REPOSITORY"
