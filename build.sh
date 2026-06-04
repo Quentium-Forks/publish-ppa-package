@@ -137,10 +137,9 @@ for s in $SERIES; do
     while true; do
         if dput ppa:$REPOSITORY ../*.changes; then
             echo "Uploaded $package to $REPOSITORY"
-
-            echo "::endgroup::"
-
-            exit 0
+            break
         fi
     done
+
+    echo "::endgroup::"
 done
